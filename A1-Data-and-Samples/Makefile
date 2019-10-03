@@ -10,7 +10,7 @@ all: Token.class Lexer.class Scanner.class
 Lexer.java: tiny.flex
 	$(JFLEX) tiny.flex
 run:
-	java Scanner < fac.tiny
+	java Scanner < samples.txt
 
 clean:
 	rm -f Lexer.java *.class *~
