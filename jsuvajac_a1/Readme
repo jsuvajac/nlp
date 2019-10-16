@@ -1,0 +1,39 @@
+Jovan Suvajac
+Assignment 1
+Special Topics in NLP
+
+The makefile must be run from the project root directory!
+
+To compile:
+make
+
+TO RUN:
+sentence splitter:
+	java -cp opennlp-tools-1.9.1.jar:. SentenceDetection articles.txt > splitted.txt
+
+token generator:
+	java Scanner < splitted.txt > tokenized.txt
+
+POS tagger:
+	java -cp opennlp-tools-1.9.1.jar:. POSTagging tokenized.txt > tagged.txt
+
+stats generator:
+	java -cp opennlp-tools-1.9.1.jar:. Stats tokenized.txt > stats.txt
+
+
+articles.txt contains the full list of articles provided.
+With promission from Dr. Song I have used and modified the example code for this assignment.
+
+Test Plan:
+Since the 4 programs are independent and require a text file as input,
+the 4 programs can be tested separately.
+
+Since sample test files were provided we can compare the output of the first 3 programs
+with the expected output in the samples of the sample.txt document file.
+
+So, the output of the sntence splitter should match samples.splitted,
+the output of the token generator should match samples.tokenized
+and tha output of the POS tagger should match the samples.tagged file
+
+For the stats generator program, the various counting and statistics requirements
+can be varified by hand.
